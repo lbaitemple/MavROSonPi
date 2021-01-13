@@ -7,7 +7,7 @@ cd ~/catkin_ws
 catkin init
 wstool init src
 rosinstall_generator --rosdistro melodic mavlink | tee /tmp/mavros.rosinstall
-rosinstall_generator --upstream-development mavros mavros_extras mavros_msgs test_mavros sensor_msgs  control_toolbox dynamic_reconfigure angles geographic_msgs rosconsole_bridge actionlib realtime_tools tf tf2_ros python_orocos_kdl urdf |tee -a /tmp/mavros.rosinstall
+rosinstall_generator --upstream-development mavros mavros_extras mavros_msgs test_mavros sensor_msgs  uuid_msgs diagnostic_updater control_msgs  control_toolbox dynamic_reconfigure angles geographic_msgs rosconsole_bridge actionlib realtime_tools tf tf2_ros python_orocos_kdl urdf |tee -a /tmp/mavros.rosinstall
 wstool merge -t src /tmp/mavros.rosinstall
 wstool update -t src -j4
 rosdep install --from-paths src --ignore-src -y
